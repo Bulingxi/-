@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录注册_ASUS华硕电脑官方商城-笔记本、手机、一体机、台式机官方直营</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<style>
+			#container{
+				height:720px ;
+			}
+			#signup{
+				height: 560px;
+				padding-top:100px ;
+			   	background-color: #f2f2f2;
+			}
+			#page_signup{
+				border: none;
+			    width: 270px;
+			    min-height: 460px;
+			    margin: 0 auto;
+			    background-color: #fff;
+			    background: #fff url(img/index/logo.png) no-repeat center 36px;
+			    padding-top: 100px;
+			    padding: 100px 179px 0;
+			    margin-bottom: 60px;
+			}
+			#sign_title{
+				margin-top: 0;
+    			text-align: center;
+    			width: 270px;
+    			height: 44px;
+    			line-height: 44px;
+    			
+    			margin-bottom: 30px;
+    			
+			}
+			#sign_title h2{
+				font-size:26px ;
+				font-weight: 400;
+			}
+			.sf,#mobile_signup,.form_act{
+				width: 270px;
+				height: 172px;
+				background: #fff;
+			}			
+			.form_item,.form_item_nomal{
+				width: 270px;
+				height: 40px;
+				margin-bottom: 10px;
+				background: #fff;
+			}
+			.inp{
+				width: 260px;
+				height: 36px;
+				padding: 1px 4px;
+				border: 1px solid #CCCCCC;
+			}
+			.need_verify{
+				width: ;
+			}
+			.vcode{
+				width: 100px;
+				float: left;
+			}
+			.lay_btn{
+				/*width: 98px;*/
+			    display: inline-block;
+			  	float: right;
+			    height: 38px;
+			    line-height: 38px;
+			    padding: 0 18px;
+			    background-color: #1E9FFF;
+			    color: #fff;
+			    text-align: center;
+			    font-size: 14px;
+			    border: none;
+			    border-radius: 2px;
+			}
+			
+			.btn{
+				width: 270px;
+				height: 38px;
+				line-height: 38px;
+				text-align: center;
+				font-size: 18px;
+				color: white;
+			}
+			
+			.btn_big{
+				background: #00a8ff;
+				/*background: gray;*/
+				border: none;
+			}
+			.action_argee{
+				height: 25px;
+			}
+			a{
+				color: #00a8ff;
+			}
+			#tips{
+				width: 250px;
+				height: 80px;
+				line-height: 80px;
+				text-align: center;
+				color: white;
+				font-size: 16px;
+				z-index: 5;
+				position: absolute;
+				display: none;
+				top: 300px;
+				left: 550px;
+				background:rgba(0,0,0,.7);
+				/*border-radius: 10px;*/
+			}
+		</style>
+	</head>
+	<body style="background-color: #f2f2f2;">
+		<div id="container" class="t">
+			<div id="signup"  class="t">
+				<div id="page_signup">
+					<div id="sign_title">
+						<h2>注册华硕商城账号</h2>
+					</div>
+					<form class="sf">
+						<ul id="mobile_signup">
+							<li class="form_item">
+								<span class="form_act">
+									<input type="text" placeholder="请输入11位手机号" class="inp account_num" />
+								</span>
+							</li>
+							<li class="form_item need_verify">
+								<span class="form_act">
+									<input type="text" placeholder="请输入验证码" class="inp vcode" />
+									<button class="lay_btn">获取短信验证码</button>
+								</span>
+							</li>
+							<li class="form_item_nomal">
+								<span class="form_act">
+									<a href="###">
+									<button class="btn btn_big" disabled="disabled">
+											注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册
+										</button>
+									</a>
+								</span>
+							</li>
+							<li class="form_item action_argee">
+								<span class="form_act">
+									<input type="checkbox"  class="agree" style="width: 13px; height: 13px;" />
+									<label class="form_lable">
+										<span>我已阅读并同意</span>
+										<a href="#">会员注册</a>和
+										<a href="#">隐私保护政策</a>
+									</label>
+								</span>
+							</li>
+						</ul>
+					</form>
+					<a href="http://127.0.0.1:8020/ASUS/login.html" style="font-size: 14px; font-weight: 500;float:left;margin-top: 20px;">已有账号，登录</a>
+				</div>
+				<div id="tips" class="tips1">
+					请输入正确的手机号！
+				</div>
+				<div id="tips" class="tips2">
+					接受服务条款才能注册,请勾选
+				</div>
+			</div>			
+		</div>
+		
+		<script>
+			$('.account_num').blur(function(){
+				var index=$('.account_num').index(this);
+				var value=$('.account_num').eq(index).val();
+//				var reg=/^\w{4}$/;
+				var reg=/^[1][3,4,5,7,8][0-9]{9}$/;
+						
+				checked(reg,value,index);
+			})
+			$('.account_num').focus(function(){
+				$('.tips1').css('display','none');
+				$('.tips2').css('display','none');
+			})
+			function checked(reg,value,index){
+				var result=reg.test(value);
+				console.log(value,result,reg);
+				
+				if(result==false){
+					$('.tips1').css('display','block');
+				}else{
+					$('.tips1').css('display','none');
+				}
+							
+			}
+			
+			$('.btn_big').click(function(){
+				if($('.agree').prop("checked")){
+					$('.tips2').css('background','none');
+				}else{
+					$('.tips2').css('display','block');
+				}
+				
+			})
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

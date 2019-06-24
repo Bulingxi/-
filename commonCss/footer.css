@@ -1,0 +1,101 @@
+.c1{
+	width: 1150px;
+	margin: 0 auto;
+}
+footer{
+	width: 100%;
+	height: 652px;
+	background: #FAFAFA;
+}
+.service{
+	height: 44px;
+    padding-top: 18px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    background-color: #fafafa;
+}
+.page_service{
+	height: 28px;
+	background: #fafafa;
+}
+.page_service ul{
+	height: 28px;	
+}
+.bb{
+	float: left;
+    width: 229px;
+    height: 28px;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    color: rgb(102, 102, 102);
+    position: relative;
+}
+.s_text{
+	float: left;
+}
+.pay{
+    border-right:none	
+}
+.s_icon{
+	width: 30px;
+	height: 28px;
+	float: left;
+	margin-left: 60px;
+	background-image: url(../img/index/service_icon.png);	
+}
+.man .s_icon{
+	background-position: 0 -60px;
+}
+.yuyue .s_icon{
+	background-position: 0 -91px;
+}
+.pay .s_icon{
+	background-position: 0 -122px;
+}
+.helper{
+	height: 279px;
+	padding-top: 60px;
+	padding-bottom: 80px;
+	background: #fafafa;
+}
+.helper_item{
+	width: 187.5px;
+	height: auto;
+	/*background: deepskyblue;*/
+	margin-right: 100px;
+	float: left;
+}
+.content_list{
+	width: 187.5px;
+}
+.content_title{
+	font-size: 16px;
+    color: #2d2d2d;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+.content_item{
+	line-height: 24px;
+    font-size: 14px;
+    color: #646464;
+}
+.content_item a:hover{
+	color: deepskyblue;
+}
+.footer_info{
+	height: 150px;
+	background: #FAFAFA;
+	padding-top: 20px;
+}
+.theme_footer{
+	height: 140px;
+	margin-top: 10px;
+}
+
+
+
+
+
+
